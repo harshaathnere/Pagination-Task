@@ -43,7 +43,7 @@ function DataList(){
                 )  : 'Loading.....'
                }
            </table>
-           <Pagination showperPage ={showperPage}  onchangePagination={onchangePagination}/>
+           <Pagination showperPage ={showperPage}  onchangePagination={onchangePagination} total={customername.length}/>
        </div>
    )
 }

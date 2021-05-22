@@ -26,7 +26,7 @@ const Pagination = ({showperPage, onchangePagination, total}) => {
     }
     return (
         <div>
-          <button className="btn btn-primary" onClick ={()=>onButton("prev")}>Primary</button>
+          <button className="btn btn-primary" onClick ={()=>onButton("prev")}>Previous</button>
             <button className="btn btn-primary" onClick ={()=>onButton("next")}>Next</button>
         </div>
     )
