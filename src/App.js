@@ -3,7 +3,7 @@ import './App.css';
 import Nav from './Nav'
 import About from './About'
 import Show from './Show';
-
+import Customerdetails from './Customerdetail'
 import DataList from './DataList'
 import {BrowserRouter as Router,Switch,Route,} from 'react-router-dom';
 import {browerHistory} from 'react-router'
@@ -39,8 +39,9 @@ function App() {
     <Route path="/" exact ><h1>Please Click on the table</h1></Route>
    <Route path="/about" component={About}/>
    <Route path="/show" component={Show}/>
-   <Route path="/table"> <Table data = {customername}/></Route>
-   <Route path="/:id"></Route>
+   
+   <center><Route path="/table"> <Table data = {customername}/></Route></center>
+   <Route path="/:id" exact component={Customerdetails}></Route>
    </Switch>
     </Router>
     
