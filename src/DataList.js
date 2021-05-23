@@ -3,12 +3,14 @@ import {Link} from 'react-router-dom'
 
 
 function DataList({data}){
-   
+   console.log("data values")
     const [bids, setbids]  = useState([]);
 
    const rowclickChange = (e) => {
      console.log("changes");
-     
+     <Link to= "/table">
+       {e.avatarUrl}
+     </Link>
    }
 
     useEffect(() => {
@@ -27,7 +29,7 @@ function DataList({data}){
    return(
                 <tr onClick={rowclickChange}>
                      <td>{data.id}</td>
-                    <td>{data.firstname}</td>
+                 <td>  <Link to={`${data.avatarUrl}`}>{data.firstname}</Link> </td>
                     <td>{data.email}</td>
                     <td>{data.phone}</td>
                     <td>{data.hasPremium}</td>
