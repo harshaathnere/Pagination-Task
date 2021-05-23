@@ -5,13 +5,13 @@ import {Link} from 'react-router-dom'
 function DataList({data}){
    console.log("data values")
     const [bids, setbids]  = useState([]);
+    const [text, settext] = useState(true);
 
-   const rowclickChange = (e) => {
-     console.log("changes");
-     <Link to= "/table">
-       {e.avatarUrl}
-     </Link>
-   }
+   
+
+   
+    
+    
 
     useEffect(() => {
            const bids = [...data.bids]
@@ -27,14 +27,16 @@ function DataList({data}){
   
     
    return(
-                <tr onClick={rowclickChange}>
+                <tr >
                      <td>{data.id}</td>
                  <td>  <Link to={`${data.avatarUrl}`}>{data.firstname}</Link> </td>
                     <td>{data.email}</td>
                     <td>{data.phone}</td>
                     <td>{data.hasPremium}</td>
-                  {  bids.length> 0 && <td>{bids[0].amount}/{bids[bids.length-1].amount}</td>}
                    
+                  { text? bids.length> 0 && <td> {bids[0].amount}/{bids[bids.length-1].amount}</td> : null}
+                    <button onClick={()=>settext(true)}>Show</button>
+                    <button onClick={()=>settext(false)}>Hide </button>
                 </tr>
    )
 }
